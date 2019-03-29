@@ -21,7 +21,11 @@ public class Index {
 				System.out.println("Qual quarto deseja alugar? ");
 				aluguel = sc.nextInt();
 				sc.nextLine();
-			} while (aluguel>11 || quarto[aluguel]!=null);
+				if(aluguel>=10)
+					System.out.println("Só temos quartos de 0 à 9");
+				if(aluguel<10 && quarto[aluguel]!=null)
+					System.out.println("Este quarto já esta alugado");
+			} while (aluguel>=10 || quarto[aluguel]!=null);
 			System.out.println("Qual seu nome? ");
 			String nome = sc.nextLine();
 			System.out.println("Qual seu email? ");
